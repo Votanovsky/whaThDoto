@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import TodoItem from './items/TodoItem'
+import CreateTodoField from './items/CreateTodoField'
 
 const data = [
     {
@@ -35,10 +36,9 @@ const Home = () => {
     const removeTodo = (id) => {
         setTodos([...todos].filter(t => t.id !== id))
 
-        console.log(todos);
+        console.log(Math.random());
     }
 
-    
 
     return (
         <div
@@ -53,6 +53,10 @@ const Home = () => {
                     removeTodo={removeTodo}
                 />
             ))}
+
+            <CreateTodoField
+                setTodos={setTodos}
+            />
         </div>
     )
 }
